@@ -9,3 +9,17 @@ let a2:Array<number> = [1,2,3];
 let b:[string, number];
 let b2:[string, number, boolean]; // n개 가능
 
+// void, never
+function sayHello():void{
+  console.log('hello');
+}
+
+function showError():never{
+  throw new Error();
+}
+
+function infLoop():never{
+  while(true){
+    // do something
+  }
+}
