@@ -41,3 +41,7 @@ enum Os2{
 }
 
 console.log(Os2['Window']); // 숫자 값이 아니면 단방향 매핑
+
+// null, undefined
+let n:null = null;
+let m:undefined = undefined;
