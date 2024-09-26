@@ -1,24 +1,23 @@
-// Literal Types
+// Union Types `|`
 
-// const(변하지 않는 값), let(변할 수 있는 값) 선언
-// 정해진 string 값을 가진 것 => 문자열 리터럴 타입
-const userName1 = "Bob"; 
-let userName2 = "Tom";
-
-// 문자형 리터럴 타입
-type Job = "police" | "developer" | "teacher";
-
-interface User{
-  name: string;
-  job: Job;
+interface Car{
+  name: "car";
+  color: string;
+  start(): void;
 }
 
-interface HighSchoolStudent {
-  name: number | string;
-  grade: 1 | 2 | 3; // 숫자형 리터럴 타입
+interface Mobile{
+  name: "mobile";
+  color: string;
+  call(): void;
 }
 
-const user:User = {
-  name: "Bob",
-  job: "developer"
+// 동일한 속성의 타입을 다르게해서 구분할 수 있는 것 => 식별 가능한 union 타입
+function getGift(gift: Car | Mobile){
+  console.log(gift.color);
+  if(gift.name === "car"){
+    gift.start();
+  }else{
+    gift.call();
+  }
 }
