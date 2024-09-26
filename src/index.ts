@@ -1,23 +1,23 @@
-// Union Types `|`
+// Intersection Types (교차 타입)
+// 여러 타입을 합쳐서 사용함 (&)
+// 장난감 + 자동차 = 장난감 자동차
+// 필요한 모든 기능을 가진 하나의 타입을 만들어준다.
 
 interface Car{
-  name: "car";
-  color: string;
+  name: string;
   start(): void;
 }
 
-interface Mobile{
-  name: "mobile";
+interface Toy{
+  name: string;
   color: string;
-  call(): void;
+  price: number;
 }
 
-// 동일한 속성의 타입을 다르게해서 구분할 수 있는 것 => 식별 가능한 union 타입
-function getGift(gift: Car | Mobile){
-  console.log(gift.color);
-  if(gift.name === "car"){
-    gift.start();
-  }else{
-    gift.call();
-  }
+// 모든 속성을 전부 기입해야 함.
+const toyCar: Toy&Car = {
+  name: "타요",
+  start(){},
+  color: "blue",
+  price: 1000,
 }
