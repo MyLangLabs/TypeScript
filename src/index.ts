@@ -23,3 +23,21 @@ function infLoop():never{
     // do something
   }
 }
+
+// enum
+enum Os{
+  Window, // Window=0; 자동으로 값이 할당된다.
+  Ios, // Ios=1;
+  Android // Android=2;
+}
+
+console.log(Os['Window']);
+console.log(Os[0]);
+
+enum Os2{ 
+  Window='win',
+  Ios='ios',
+  Android='and'
+}
+
+console.log(Os2['Window']); // 숫자 값이 아니면 단방향 매핑
