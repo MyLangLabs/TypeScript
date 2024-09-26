@@ -6,10 +6,7 @@ interface User{
   age : number;
   gender? : string; // ?는 입력을 해도 되고 안해도되고 => optional
   readonly birthYear : number; // readonly는 읽기 전용 속성
-  1? : string;
-  2? : string;
-  3? : string;
-  4? : string;
+  [grade:number] : string; // 인덱스 시그니처
 }
 
 let user : User = {
