@@ -8,9 +8,14 @@ interface Car{
 }
 
 class Bmw implements Car{
-  color = "red";
+  color;
   wheels = 4;
+  constructor(c:string){ // 생성자
+    this.color = c;
+  }
   start(){
     console.log('go...');
   }
 }
+
+const b = new Bmw('green');
