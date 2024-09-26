@@ -1,3 +1,3 @@
-// src/index.ts
-const message: string = "Hello, TypeScript!";
-console.log(message);
+// string 타입
+
+let car:string = 'bmw';
