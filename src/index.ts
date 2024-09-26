@@ -1,23 +1,9 @@
 // 함수
 
-// 선택적 매개변수와 필수 매개변수를 바꾸면 안된다.
-function hello(name: string, age?:number):string{ 
-  if (age !== undefined)
-    return `Hello, ${name}. You are ${age}.`;
-  else
-    return `Hello, ${name}`;
+// 나머지 매개변수의 type 작성법
+// `...`를 사용하면 전달받은 매개변수를 배열로 나타냄
+function add(...nums: number[]){
+  return nums.reduce((result, num) => result + num, 0);
 }
 
-// optional이 앞에 오게 하고 싶으면 undefined를 추가한다.
-function hello2(age: number|undefined, name: string):string{ 
-  if (age !== undefined)
-    return `Hello, ${name}. You are ${age}.`;
-  else
-    return `Hello, ${name}`;
-}
-
-console.log(hello('Sam'));
-console.log(hello("Sam", 30));
-
-// undefined를 명시적으로 전달해줘야한다.
-console.log(hello2(undefined, "sam"));
+add(1,2,3);
