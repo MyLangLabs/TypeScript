@@ -5,12 +5,17 @@
 const userName1 = "Bob"; 
 let userName2 = "Tom";
 
-// 문자열 리터럴 타입
+// 문자형 리터럴 타입
 type Job = "police" | "developer" | "teacher";
 
 interface User{
   name: string;
   job: Job;
+}
+
+interface HighSchoolStudent {
+  name: number | string;
+  grade: 1 | 2 | 3; // 숫자형 리터럴 타입
 }
 
 const user:User = {
