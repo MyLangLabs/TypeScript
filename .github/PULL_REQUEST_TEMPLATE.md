@@ -1,9 +1,7 @@
-✍ // lecture/num : task
+### ✍ // lecture/num : task
 
-
-📝Description
+### 📝Description
 // Description 작성
 
- 
-📌Summary
+### 📌Summary
 // Summary 작성
