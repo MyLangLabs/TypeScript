@@ -1,25 +1,25 @@
-// 함수
+// 함수 오버로드
+// 전달받은 매개변수의 갯수나 타입에 따라 다르게 동작하게 함
 
-// this
+
 interface User{
   name: string;
+  age: number;
 }
 
-const Sam: User = {name:'Sam'}
-const Mike: User = {name:'Mike'}
-
-// 매개변수가 없을 때 => 매개변수 자리에 this의 타입 지정
-function showName(this: User){
-  console.log(this.name);
+// 함수 오버로드 사용
+function join(name: string, age: number): User;
+function join(name: string, age: string): User;
+function join(name: string, age: number|string):User|string{
+  if(typeof age === "number"){
+    return{
+      name,
+      age,
+    };
+  } else{
+    return "나이는 숫자로 입력해주세요.";
+  }
 }
 
-// 매개변수 있을 때 => 맨 앞에 this의 타입 지정
-function showName2(this: User, age:number, gender: 'm'|'f'){
-  console.log(this.name, age, gender);
-}
-
-const a= showName.bind(Sam);
-a();
-
-const b = showName2.bind(Mike);
-b(30, 'm');
+const sam: User = join("Sam", 30);
+const jane: User = join("Jane", "30");
