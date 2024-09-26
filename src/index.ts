@@ -1,4 +1,3 @@
-// interface로 class 정의하기
 // implements
 
 interface Car{
@@ -7,33 +6,10 @@ interface Car{
   start(): void;
 }
 
-// extends 키워드 사용
-interface Benz extends Car{
-  door: number;
-  stop(): void;
+interface Toy{
+  name: string;
 }
 
-const benz: Benz = {
-  door: 5,
-  stop(){
-    console.log('stop');
-  },
-  color: 'black',
-  wheels: 4,
-  start(){
-    console.log('go..')
-  }
+interface ToyCar extends Car, Toy{
+  price: number;
 }
-
-class Bmw implements Car{
-  color;
-  wheels = 4;
-  constructor(c:string){ // 생성자
-    this.color = c;
-  }
-  start(){
-    console.log('go...');
-  }
-}
-
-const b = new Bmw('green');
