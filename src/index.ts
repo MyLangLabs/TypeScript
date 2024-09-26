@@ -1,9 +1,25 @@
 // 함수
 
-// 나머지 매개변수의 type 작성법
-// `...`를 사용하면 전달받은 매개변수를 배열로 나타냄
-function add(...nums: number[]){
-  return nums.reduce((result, num) => result + num, 0);
+// this
+interface User{
+  name: string;
 }
 
-add(1,2,3);
+const Sam: User = {name:'Sam'}
+const Mike: User = {name:'Mike'}
+
+// 매개변수가 없을 때 => 매개변수 자리에 this의 타입 지정
+function showName(this: User){
+  console.log(this.name);
+}
+
+// 매개변수 있을 때 => 맨 앞에 this의 타입 지정
+function showName2(this: User, age:number, gender: 'm'|'f'){
+  console.log(this.name, age, gender);
+}
+
+const a= showName.bind(Sam);
+a();
+
+const b = showName2.bind(Mike);
+b(30, 'm');
