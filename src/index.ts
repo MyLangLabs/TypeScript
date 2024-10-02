@@ -1,23 +1,27 @@
 // Generic
 
-interface Mobile<T> {
-  name: String;
+interface User{
+  name: string;
+  age: number;
+}
+
+interface Car{
+  name: string;
+  color: string;
+}
+
+interface Book{
   price: number;
-  option: T; // 값 미정
 }
 
-// const m1: Mobile<object> ={
-const m1: Mobile<{color: string; coupon: boolean}> = {
-  name: "s21",
-  price: 1000,
-  option:{
-    color: "red",
-    coupon: false,
-  },
+const user: User = {name: "a", age: 10};
+const car: Car = {name: "bmw", color: "Red"};
+const book: Book = {price: 3000};
+
+function showName<T extends {name: string}>(data: T): string{
+  return data.name;
 }
 
-const m2: Mobile<string> ={
-  name: "s20",
-  price: 900,
-  option: "good",
-};
+showName(user);
+showName(car);
+// showName(book); // 에러 발생
