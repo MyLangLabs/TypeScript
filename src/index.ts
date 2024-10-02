@@ -1,15 +1,14 @@
-// Partial<T>
-// 프로퍼티를 모두 optional로 변경해준다.
-// 일부만 사용하는 것이 가능해진다.
+// Required<T>
+// 모든 프로퍼티를 필수로 변경해준다.
 
-interface User {
+interface User{
   id: number;
   name: string;
-  age: number;
-  gender: "m" | "f";
+  age?: number;
 }
 
-let admin: Partial<User> = {
+let admin: Required<User> = {
   id: 1,
   name: "Bob",
+  age: 30
 }
