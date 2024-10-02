@@ -1,15 +1,23 @@
-// Readonly<T>
-// 모든 프로퍼티를 읽기전용으로 변경
+// Record<K,T> // K=key, T=type
+
+const score: Record<'1'|'2'|'3'|'4', "A"|"B"|"C"|"D"> = {
+  1: "A",
+  2: "C",
+  3: "B",
+  4: "D",
+}
 
 interface User{
   id: number;
   name: string;
-  age?: number;
+  age: number;
 }
 
-let admin: Readonly<User> = {
-  id: 1,
-  name: "Bob",
+function isValid(user:User){
+  const result: Record<keyof User, boolean> ={
+    id: user.id>0,
+    name: user.name !=='',
+    age: user.age > 0,
+  };
+  return result;
 }
-
-// admin.id = 4; // 에러 발생. 할당만 가능하고 수정 불가.
