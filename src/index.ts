@@ -1,23 +1,15 @@
-// Record<K,T> // K=key, T=type
+// Pick<T,K>
 
-const score: Record<'1'|'2'|'3'|'4', "A"|"B"|"C"|"D"> = {
-  1: "A",
-  2: "C",
-  3: "B",
-  4: "D",
-}
+// T 타입에서 K 프로퍼티만 골라서 사용
 
 interface User{
   id: number;
   name: string;
   age: number;
+  gender: "M"|"W";
 }
 
-function isValid(user:User){
-  const result: Record<keyof User, boolean> ={
-    id: user.id>0,
-    name: user.name !=='',
-    age: user.age > 0,
-  };
-  return result;
+const admin: Pick<User, "id"|"name"> = {
+  id: 0,
+  name: "Bob",
 }
