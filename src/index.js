@@ -1,4 +1,5 @@
 // class
+// readonly
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -14,26 +15,28 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-// 접근 제한자 - public, private, protected
 var Car = /** @class */ (function () {
-    function Car(color) {
+    function Car(color, name) {
         this.name = "car";
         this.color = color;
+        this.name = name;
     }
     Car.prototype.start = function () {
         console.log("start");
+        console.log(this.name);
     };
     return Car;
 }());
 var Bmw = /** @class */ (function (_super) {
     __extends(Bmw, _super);
-    function Bmw(color) {
-        return _super.call(this, color) || this;
+    function Bmw(color, name) {
+        return _super.call(this, color, name) || this;
     }
     Bmw.prototype.showName = function () {
+        // console.log(super.name); // super -> this로 변경
         console.log(this.name);
     };
     return Bmw;
 }(Car));
-var z4 = new Bmw("black");
+var z4 = new Bmw("black", "zzzz4");
 console.log(z4);

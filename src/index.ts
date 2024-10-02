@@ -1,21 +1,22 @@
 // class
-
-// 접근 제한자 - public, private, protected
+// readonly
 
 class Car {
-  public name: string = "car";
+  readonly name: string = "car";
   color: string;
-  constructor(color: string){
+  constructor(color: string, name){
     this.color = color;
+    this.name = name;
   }
   start(){
     console.log("start");
+    console.log(this.name);
   }
 }
 
 class Bmw extends Car{
-  constructor(color: string){
-    super(color);
+  constructor(color: string, name){
+    super(color, name);
   }
   showName(){
     // console.log(super.name); // super -> this로 변경
@@ -23,5 +24,5 @@ class Bmw extends Car{
     }
 }
 
-const z4 = new Bmw("black");
+const z4 = new Bmw("black", "zzzz4");
 console.log(z4);
