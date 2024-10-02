@@ -1,6 +1,16 @@
 {
   "compilerOptions": {
-    "target": "es6",         // 컴파일 시 사용할 ECMAScript 버전
+    "target": "es6",       // 컴파일 시 사용할 ECMAScript 버전
+    "lib" : [
+      "dom",
+      "dom.iterable",
+      "esnext",
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
     "module": "commonjs",    // 모듈 시스템
     "strict": true,          // 엄격한 타입 검사
     "esModuleInterop": true, // ES 모듈과의 상호 운용성 설정
