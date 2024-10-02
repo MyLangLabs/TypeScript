@@ -1,15 +1,7 @@
-// Omit<T,K>
+// Exclude<T1, T2>
 
-// T 타입에서 K 프로퍼티만 생략해서 사용
+// T1에서 T2를 제외하고 사용
+// Omit은 프로퍼티를 제거, Exclude는 타입을 제거
 
-interface User{
-  id: number;
-  name: string;
-  age: number;
-  gender: "M"|"W";
-}
-
-const admin: Omit<User, "age"|"gender"> = {
-  id: 0,
-  name: "Bob",
-}
+type T1 = string|number;
+type T2 = Exclude<T1,number>;
