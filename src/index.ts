@@ -1,5 +1,5 @@
-// Required<T>
-// 모든 프로퍼티를 필수로 변경해준다.
+// Readonly<T>
+// 모든 프로퍼티를 읽기전용으로 변경
 
 interface User{
   id: number;
@@ -7,8 +7,9 @@ interface User{
   age?: number;
 }
 
-let admin: Required<User> = {
+let admin: Readonly<User> = {
   id: 1,
   name: "Bob",
-  age: 30
 }
+
+// admin.id = 4; // 에러 발생. 할당만 가능하고 수정 불가.
