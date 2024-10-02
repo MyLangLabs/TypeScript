@@ -1,6 +1,10 @@
-// src/index.ts
+// class
+
+// 접근 제한자 - public, private, protected
+
 class Car {
-  color: string; // ts에서 class를 사용하려면 멤버변수 미리 선언
+  public name: string = "car";
+  color: string;
   constructor(color: string){
     this.color = color;
   }
@@ -9,4 +13,15 @@ class Car {
   }
 }
 
-const bmw = new Car("red");
+class Bmw extends Car{
+  constructor(color: string){
+    super(color);
+  }
+  showName(){
+    // console.log(super.name); // super -> this로 변경
+    console.log(this.name);
+    }
+}
+
+const z4 = new Bmw("black");
+console.log(z4);
