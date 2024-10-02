@@ -1,30 +1,32 @@
-// class
-// static
+// 추상 class => abstract
 
-class Car {
+abstract class Car {
   readonly name: string = "car";
   color: string;
   static wheels = 4;
-  constructor(color: string, name){
+  constructor(color: string){
     this.color = color;
-    this.name = name;
   }
   start(){
     console.log("start");
-    console.log(this.name);
-    console.log(Car.wheels);
   }
+  abstract doSomething():void;
 }
 
+// const car = new Car("red"); // 추상 클래스는 new로 객체 생성 불가
+
 class Bmw extends Car{
-  constructor(color: string, name){
-    super(color, name);
+  constructor(color: string){
+    super(color);
   }
   showName(){
     // console.log(super.name); // super -> this로 변경
     console.log(this.name);
     }
+    doSomething(): void {
+      alert(3);
+    }
 }
 
-const z4 = new Bmw("black", "zzzz4");
+const z4 = new Bmw("black");
 console.log(z4.name);
