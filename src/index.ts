@@ -1,14 +1,15 @@
-// keyof
+// Partial<T>
+// 프로퍼티를 모두 optional로 변경해준다.
+// 일부만 사용하는 것이 가능해진다.
 
-interface User{
+interface User {
   id: number;
   name: string;
   age: number;
   gender: "m" | "f";
 }
 
-type USerKey = keyof User;
-// keyof 키워드를 사용해서 키값들을 union 형태로 받을 수 있다.
-// 'id' | 'name' | 'age' | 'gender'
-
-const uk:USerKey = "id";
+let admin: Partial<User> = {
+  id: 1,
+  name: "Bob",
+}
