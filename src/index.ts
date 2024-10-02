@@ -1,6 +1,6 @@
-// Pick<T,K>
+// Omit<T,K>
 
-// T 타입에서 K 프로퍼티만 골라서 사용
+// T 타입에서 K 프로퍼티만 생략해서 사용
 
 interface User{
   id: number;
@@ -9,7 +9,7 @@ interface User{
   gender: "M"|"W";
 }
 
-const admin: Pick<User, "id"|"name"> = {
+const admin: Omit<User, "age"|"gender"> = {
   id: 0,
   name: "Bob",
 }
